@@ -2,12 +2,13 @@ class VerdictsController < ApplicationController
   def create
     correct_answer = cookies[:correct_answer]
     answer = params[:commit]
+    cookies.delete :question
 
     case answer
     when correct_answer
-      cookies.delete :question
       flash.notice = 'correct!'
     else
+      cookies.delete :question_num
       flash.notice = 'incorrect!'
     end
 
