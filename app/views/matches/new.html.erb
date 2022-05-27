@@ -1,4 +1,6 @@
-<p><%= flash[:notice] %></p>
+<% correct = true if flash[:notice] == 'correct!' %>
+
+<p class="flash <%= correct ? 'correct' : 'incorrect' %>"><%= flash[:notice] %></p>
 <p><%= @question.html_safe %></p>
 <%= form_with url: '/verdicts', method: 'post' do |f| %>
   <% @answers.each do |answer| %>
