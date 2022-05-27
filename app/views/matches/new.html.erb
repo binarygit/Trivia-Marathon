@@ -1,0 +1,4 @@
+<p><%= @question.html_safe %></p>
+<% @answers.each do |answer| %>
+  <button><%= answer.html_safe %></button>
+<% end %>
