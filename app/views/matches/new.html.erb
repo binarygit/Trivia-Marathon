@@ -1,4 +1,7 @@
+<p><%= flash[:notice] %></p>
 <p><%= @question.html_safe %></p>
-<% @answers.each do |answer| %>
-  <button><%= answer.html_safe %></button>
+<%= form_with url: '/verdicts', method: 'post' do |f| %>
+  <% @answers.each do |answer| %>
+    <%= f.submit answer.html_safe %>
+  <% end %>
 <% end %>
