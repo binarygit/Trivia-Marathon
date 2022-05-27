@@ -7,6 +7,7 @@ class MatchesController < ApplicationController
 
     @question = cookies[:question]
     @answers = JSON.parse cookies[:answers]
+    @question_num = cookies[:question_num]
   end
 
   private
@@ -20,7 +21,11 @@ class MatchesController < ApplicationController
   def set_cookies
     cookies[:answers] = @hash_response['incorrect_answers'].push(@hash_response['correct_answer']).shuffle
     cookies[:answers] = JSON.generate cookies['answers']
+
     cookies[:correct_answer] = @hash_response['correct_answer']
     cookies[:question] = @hash_response['question']
+
+    cookies[:question_num] ||= 0
+    cookies[:question_num] = cookies[:question_num].to_i + 1
   end
 end

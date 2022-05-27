@@ -5,6 +5,7 @@ class VerdictsController < ApplicationController
 
     case answer
     when correct_answer
+      cookies.delete :question
       flash.notice = 'correct!'
     else
       flash.notice = 'incorrect!'
