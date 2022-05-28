@@ -1,10 +1,17 @@
-<!--
 <div class="container center">
   <% if flash[:notice] %>
     <p class="flash correct"><%= flash[:notice] %></p>
-  <% else %>
-    <div class='modal'>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class='modal' data-controller='modal'>
       <div class='modal-content'>
+        <span data-action='click->modal#close'>&times;</span>
+        <div class='gif-container'>
+          <%= image_tag 'gameover.gif' %>
+        </div>
+        <p>The correct answer was: <%= cookies[:correct_ans_for_prev_ques].html_safe %></p>
+        <p>Your score: <%= cookies[:total_score] %></p>
       </div>
     </div>
   <% end %>
@@ -20,16 +27,3 @@
     <p>Questions answered: <%= @questions_answered %></p>
   </div>
 </div>
--->
-
-<div class='modal'>
-  <div class='modal-content'>
-    <span>&times;</span>
-    <div class='gif-container'>
-      <%= image_tag 'gameover.gif' %>
-    </div>
-    <p>The correct answer was: <%= cookies[:correct_answer] %></p>
-    <p>Your score: <%= @questions_answered %></p>
-  </div>
-</div>
-
