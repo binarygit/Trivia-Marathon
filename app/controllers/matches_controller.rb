@@ -13,7 +13,7 @@ class MatchesController < ApplicationController
   private
 
   def fetch_question
-    url = URI('https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple')
+    url = URI("https://opentdb.com/api.php?amount=1&difficulty=#{difficulty_level}&type=multiple")
     json_response = Net::HTTP.get(url)
     @hash_response = JSON.parse(json_response)['results'].first
   end
@@ -27,5 +27,11 @@ class MatchesController < ApplicationController
 
     cookies[:questions_answered] ||= 0
     cookies[:questions_answered] = cookies[:questions_answered].to_i + 1
+  end
+
+  def difficulty_level
+    return 'easy' if @questions_answered.nil? || @questions_answered < 5
+    return 'medium' if @questions_answered < 20
+    return 'hard'
   end
 end
