@@ -53,10 +53,13 @@ input[type='submit']:hover {
 
 .correct {
   color: green;
+  background: #1E9651;
+  color: white;
 }
 
 .incorrect {
   color: red;
+  background: rebeccapurple;
 }
 
 .question {
@@ -68,6 +71,27 @@ input[type='submit']:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+.flash {
+  position: fixed;
+  top: 35px;
+  padding: 25px;
+  border-radius: 30px;
+  width: 40vw;
+  text-align: center;
+  opacity: 0;
+  animation: 3s 2 alternate fade-in-out;
+}
+
+@keyframes fade-in-out {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 600px) {

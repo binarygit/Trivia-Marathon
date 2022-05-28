@@ -6,10 +6,10 @@ class VerdictsController < ApplicationController
 
     case answer
     when correct_answer
-      flash.notice = 'correct!'
+      flash.notice = 'That was correct!'
     else
       cookies.delete :questions_answered
-      flash.notice = 'incorrect!'
+      flash.error = 'incorrect!'
     end
 
     redirect_to root_path
