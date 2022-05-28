@@ -1,3 +1,4 @@
+<!--
 <div class="container center">
   <% if flash[:notice] %>
     <p class="flash correct"><%= flash[:notice] %></p>
@@ -19,3 +20,16 @@
     <p>Questions answered: <%= @questions_answered %></p>
   </div>
 </div>
+-->
+
+<div class='modal'>
+  <div class='modal-content'>
+    <span>&times;</span>
+    <div class='gif-container'>
+      <%= image_tag 'gameover.gif' %>
+    </div>
+    <p>The correct answer was: <%= cookies[:correct_answer] %></p>
+    <p>Your score: <%= @questions_answered %></p>
+  </div>
+</div>
+
