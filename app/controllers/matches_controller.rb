@@ -7,7 +7,7 @@ class MatchesController < ApplicationController
 
     @question = cookies[:question]
     @answers = JSON.parse cookies[:answers]
-    @question_num = cookies[:question_num]
+    @questions_answered = cookies[:questions_answered]
   end
 
   private
@@ -25,7 +25,7 @@ class MatchesController < ApplicationController
     cookies[:correct_answer] = @hash_response['correct_answer']
     cookies[:question] = @hash_response['question']
 
-    cookies[:question_num] ||= 0
-    cookies[:question_num] = cookies[:question_num].to_i + 1
+    cookies[:questions_answered] ||= 0
+    cookies[:questions_answered] = cookies[:questions_answered].to_i + 1
   end
 end

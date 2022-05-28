@@ -8,7 +8,7 @@ class VerdictsController < ApplicationController
     when correct_answer
       flash.notice = 'correct!'
     else
-      cookies.delete :question_num
+      cookies.delete :questions_answered
       flash.notice = 'incorrect!'
     end
 
