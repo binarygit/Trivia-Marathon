@@ -1,7 +1,11 @@
 class RankingsController < ApplicationController
+  def index
+    @rankings = Ranking.all.order(score: :desc)
+  end
+
   def create
     @ranking = Ranking.new(attr_hash).save
-    redirect_to root_path
+    redirect_to rankings_path
   end
 
   private
