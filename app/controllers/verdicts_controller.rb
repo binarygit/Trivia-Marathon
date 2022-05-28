@@ -8,8 +8,8 @@ class VerdictsController < ApplicationController
     when correct_answer
       flash.notice = 'That was correct!'
     else
+      # reset num of questions answered
       cookies.delete :questions_answered
-      flash.error = 'incorrect!'
     end
 
     redirect_to root_path

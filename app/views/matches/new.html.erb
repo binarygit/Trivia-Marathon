@@ -1,13 +1,19 @@
 <div class="container center">
   <% if flash[:notice] %>
     <p class="flash correct"><%= flash[:notice] %></p>
+  <% else %>
+    <div class='modal'>
+      <div class='modal-content'>
+      </div>
+    </div>
   <% end %>
 
   <div>
     <h3 class='question'><%= @question.html_safe %></h3>
     <%= form_with url: '/verdicts', method: 'post', class: 'answers-container' do |f| %>
       <% @answers.each do |answer| %>
-        <%= f.submit answer.html_safe %>
+        <% answer = answer.html_safe %>
+        <%= f.button answer, class: 'answer_btn', name: 'commit', value: answer %>
       <% end %>
     <% end %>
     <p>Questions answered: <%= @questions_answered %></p>

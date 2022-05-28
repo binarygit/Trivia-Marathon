@@ -19,29 +19,38 @@ body {
   font-family: 'Roborto Mono', monospace, sans-serif;
   font-size: 1.6rem;
   height: 100%;
-  background: #E8DCB8;
+  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
 }
 
-input[type='submit'] {
-  background-color: #4D4AE8;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
-  border: 1px solid #4D4AE8;
-  border-radius: 1rem;
-  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
-  box-sizing: border-box;
-  color: #FFFFFF;
+.answer_btn {
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
   cursor: pointer;
-  line-height: 1.5;
-  padding: .5rem 1rem;
-  text-align: center;
-  text-transform: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  vertical-align: middle;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-input[type='submit']:hover {
-  background-color: #3733E5;
-  border-color: #3733E5;
+.answer_btn:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.answer_btn:hover:after {
+  top: 0px;
+  left: 0px;
 }
 
 .center {
@@ -94,12 +103,19 @@ input[type='submit']:hover {
   }
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 1.4rem;
+@media (max-width: 768px) {
+  body { font-size: 1.4rem;
   }
 
   .container {
     padding: 20px;
+  }
+
+  .flash {
+    width: 60vw;
+  }
+
+  .answer_btn {
+    padding: 13px 50px 13px;
   }
 }
