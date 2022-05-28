@@ -12,6 +12,10 @@
         </div>
         <p>The correct answer was: <%= cookies[:correct_ans_for_prev_ques].html_safe %></p>
         <p>Your score: <%= cookies[:total_score] %></p>
+        <%= form_with url: '/rankings', method: 'post' do |f| %>
+          <%= f.text_field 'name' %>
+          <%= f.submit 'save' %>
+        <% end %>
       </div>
     </div>
   <% end %>
