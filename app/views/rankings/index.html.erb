@@ -1,3 +1,18 @@
-<% @rankings.each do |ranking| %>
-  <p><%= ranking.name %>: <%= ranking.score %></p>
-<% end %>
+<div class="container">
+  <div class="table-container">
+    <h1>LeaderBoard</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <% @rankings.each do |ranking| %>
+      <tr>
+        <td><%= ranking.name %></td>
+        <td><%= ranking.score %></td>
+      </tr>
+    <% end %>
+    </table>
+    <a href="<%= url_for new_match_path %>"><button class='new_game_btn'>New Game</button></a>
+  </div>
+</div>
