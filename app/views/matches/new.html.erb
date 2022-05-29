@@ -13,7 +13,7 @@
         <p>The correct answer was: <%= cookies[:correct_ans_for_prev_ques].html_safe %></p>
         <p>Your score: <%= cookies[:total_score] %></p>
         <%= form_with url: '/rankings', method: 'post', class: 'new_ranking' do |f| %>
-          <%= f.text_field 'name', placeholder: 'Enter your name' %>
+          <%= f.text_field 'name', placeholder: 'Enter your name', required: true %>
           <%= f.button 'save', class: 'new_game_btn' %>
         <% end %>
       </div>
