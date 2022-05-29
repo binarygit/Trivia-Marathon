@@ -76,6 +76,10 @@ tr:nth-child(odd) {
   left: 0px;
 }
 
+.answer_btn:focus-visible {
+  outline: 3px solid #ff00cb;
+}
+
 .center {
   display: flex;
   flex-direction: column;
