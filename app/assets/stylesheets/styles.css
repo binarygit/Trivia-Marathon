@@ -177,8 +177,6 @@ tr:nth-child(odd) {
   gap: 25px;
 }
 
-
-
 .new_game_btn {
   padding: 20px;
   border-radius: 20px;
@@ -191,6 +189,12 @@ tr:nth-child(odd) {
 .new_game_btn:hover {
   background-color: white;
   transition: .2s;
+}
+
+.new_ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (max-width: 768px) {
