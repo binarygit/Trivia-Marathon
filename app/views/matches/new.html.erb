@@ -20,6 +20,7 @@
     </div>
   <% end %>
 
+  <h1>Trivia Marathon</h1>
   <div>
     <h3 class='question'><%= @question.html_safe %></h3>
     <%= form_with url: '/verdicts', method: 'post', class: 'answers-container' do |f| %>
