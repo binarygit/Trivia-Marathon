@@ -205,10 +205,6 @@ tr:nth-child(odd) {
     width: 60vw;
   }
 
-  .answer_btn {
-    padding: 13px 50px 13px;
-  }
-
   .modal-content {
     width: 70%;
   }
