@@ -4,6 +4,8 @@ I made this website to play with an external API. The API is [The Open Trivia Da
 
 Here is the live site: https://cryptic-sierra-10012.herokuapp.com
 
+![image](https://user-images.githubusercontent.com/87677429/171020230-6776cf3c-4dae-4bf0-97ff-da0dc7d41ec4.png)
+
 # Challenges
 
 1. Making the app stateful.
