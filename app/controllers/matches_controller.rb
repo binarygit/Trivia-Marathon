@@ -1,6 +1,4 @@
 class MatchesController < ApplicationController
-  require "net/http"
-  require "json"
 
   def new
     fetch_question and set_cookies unless cookies[:question]
